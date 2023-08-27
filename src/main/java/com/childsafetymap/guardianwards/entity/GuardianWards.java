@@ -1,5 +1,6 @@
 package com.childsafetymap.guardianwards.entity;
 
+import com.childsafetymap.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,13 @@ public class GuardianWards {
 
     @Column(columnDefinition = "tinyint")
     private boolean check;
+
+    @ManyToOne
+    @JoinColumn(name = "parents_id")
+    private User parents;
+
+    @ManyToOne
+    @JoinColumn(name = "child_id")
+    private User child;
 
 }
