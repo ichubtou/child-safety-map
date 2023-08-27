@@ -1,12 +1,14 @@
 package com.childsafetymap.tag.entity;
 
-import com.childsafetymap.user.entity.User;
+import com.childsafetymap.marker.entity.MarkerTag;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,6 +28,9 @@ public class Tag {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TagCategory tagCategory;
+
+    @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL)
+    private List<MarkerTag> markerTags = new ArrayList<>();
 
     public enum TagKind {
         SAFE("안전"),
