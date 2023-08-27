@@ -1,6 +1,6 @@
 package com.childsafetymap.tag.entity;
 
-import com.childsafetymap.marker.entity.MarkerTag;
+import com.childsafetymap.marker.entity.Marker;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +30,7 @@ public class Tag {
     private TagCategory tagCategory;
 
     @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL)
-    private List<MarkerTag> markerTags = new ArrayList<>();
+    private List<Marker> markers = new ArrayList<>();
 
     public enum TagKind {
         SAFE("안전"),

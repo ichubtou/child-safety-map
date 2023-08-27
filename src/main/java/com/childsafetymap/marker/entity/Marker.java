@@ -2,6 +2,7 @@ package com.childsafetymap.marker.entity;
 
 
 import com.childsafetymap.report.entity.Report;
+import com.childsafetymap.tag.entity.Tag;
 import com.childsafetymap.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,8 +45,9 @@ public class Marker {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "marker", cascade = CascadeType.ALL)
-    private List<MarkerTag> markerTags = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "marker_id")
+    private Tag tag;
 
     @OneToMany(mappedBy = "marker", cascade = CascadeType.ALL)
     private List<Report> reports = new ArrayList<>();
