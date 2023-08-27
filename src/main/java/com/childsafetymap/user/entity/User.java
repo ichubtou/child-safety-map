@@ -1,5 +1,8 @@
 package com.childsafetymap.user.entity;
 
+import com.childsafetymap.guardianwards.entity.GuardianWards;
+import com.childsafetymap.marker.entity.Marker;
+import com.childsafetymap.report.entity.Report;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -53,6 +56,18 @@ public class User {
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Marker> markers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "parents", cascade = CascadeType.ALL)
+    private List<GuardianWards> parents = new ArrayList<>();
+
+    @OneToMany(mappedBy = "child", cascade = CascadeType.ALL)
+    private List<GuardianWards> child = new ArrayList<>();
+
+    @OneToMany(mappedBy = "report", cascade = CascadeType.ALL)
+    private List<Report> reports = new ArrayList<>();
 
     public enum UserStatus {
         USER_ACTIVE("활동중"),
