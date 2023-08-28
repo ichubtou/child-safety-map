@@ -32,10 +32,10 @@ public class Marker {
     private String imageUrl;
 
     @Column(nullable = false)
-    private float longitude;
+    private double longitude;
 
     @Column(nullable = false)
-    private float latitude;
+    private double latitude;
 
     @CreatedDate
     @Column(updatable = false)
