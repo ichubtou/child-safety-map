@@ -24,7 +24,8 @@ public class Tag {
     @Column(nullable = false)
     private boolean isSafe;
 
-    private TagCategory kind;
+    @Column(nullable = false)
+    private String kind;
 
     @Column(nullable = false)
     private String name;
@@ -32,9 +33,4 @@ public class Tag {
     @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL)
     private List<Marker> markers = new ArrayList<>();
 
-    public enum TagCategory {
-        POLICE_STATION,
-        CONSTRUCTION_SITE,
-        ETC;
-    }
 }
