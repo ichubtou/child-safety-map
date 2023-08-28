@@ -22,37 +22,19 @@ public class Tag {
     Long tagId;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private TagKind kind;
+    private boolean isSafe;
+
+    private TagCategory kind;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private TagCategory tagCategory;
+    private String name;
 
     @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL)
     private List<Marker> markers = new ArrayList<>();
 
-    public enum TagKind {
-        SAFE("안전"),
-        DANGER("위험");
-
-        @Getter
-        public String isSafe;
-
-        TagKind(String isSafe) {
-            this.isSafe = isSafe;
-        }
-    }
-
     public enum TagCategory {
-        POLICE_STATION("경찰서"),
-        CONSTRUCTION_SITE("공사장");
-
-        @Getter
-        public String category;
-
-        TagCategory(String category) {
-            this.category = category;
-        }
+        POLICE_STATION,
+        CONSTRUCTION_SITE,
+        ETC;
     }
 }
