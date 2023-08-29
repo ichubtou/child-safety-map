@@ -47,6 +47,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserStatus status = UserStatus.USER_ACTIVE;
 
+    private boolean isParents;
+
     private LocalDateTime banTime;
 
     private int reportedCount;
