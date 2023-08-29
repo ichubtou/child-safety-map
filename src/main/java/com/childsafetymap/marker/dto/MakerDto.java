@@ -65,6 +65,8 @@ public class MakerDto {
         private LocalDateTime createdAt;
         private boolean report;
         private int reportedCount;
+        private boolean myMarker;
+        private boolean checkAdmin;
 
     }
 
