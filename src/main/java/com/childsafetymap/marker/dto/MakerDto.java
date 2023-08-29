@@ -74,6 +74,8 @@ public class MakerDto {
 
         private Long markerId;
         private String isSafe;
+        private double longitude;
+        private double latitude;
 
     }
 }
