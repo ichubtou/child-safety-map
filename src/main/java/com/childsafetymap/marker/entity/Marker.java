@@ -26,7 +26,7 @@ public class Marker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long markerId;
 
     @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String imageUrl;
