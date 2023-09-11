@@ -46,7 +46,7 @@ public class Marker {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "marker_id")
+    @JoinColumn(name = "tag_id")
     private Tag tag;
 
     @OneToMany(mappedBy = "marker", cascade = CascadeType.ALL)
