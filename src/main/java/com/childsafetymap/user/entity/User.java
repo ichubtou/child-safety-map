@@ -68,7 +68,7 @@ public class User {
     @OneToMany(mappedBy = "child", cascade = CascadeType.ALL)
     private List<GuardianWards> child = new ArrayList<>();
 
-    @OneToMany(mappedBy = "report", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Report> reports = new ArrayList<>();
 
     public enum UserStatus {
