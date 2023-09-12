@@ -22,7 +22,7 @@ public class GuardianWards {
     private Long guardianwardsId;
 
     @Column(columnDefinition = "tinyint")
-    private boolean check;
+    private boolean checkParentChild;
 
     @ManyToOne
     @JoinColumn(name = "parents_id")
